@@ -12,8 +12,13 @@ app.use(
   })
 );
 app.use(bodyParser.json());
-const productosRuta = require("./controladores/producto");
-app.use("/productos", productosRuta);
+const productosRuta = require("./controladores/Producto");
+const mesaRuta = require("./controladores/Mesa");
+const promoRuta = require("./controladores/Promocion");
+//const mesaRuta = require("./controladores/Mesa");
+app.use("/producto", productosRuta);
+app.use("/mesa", mesaRuta);
+app.use("/promocion", promoRuta);
 
 //db
 mongoose.connect(

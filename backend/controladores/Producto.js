@@ -1,6 +1,6 @@
 const express = require("express");
 const ruteador = express.Router();
-const Producto = require("../modelo/producto");
+const Producto = require("../modelo/Producto");
 
 ruteador.get("/", (req, res) => {
   Producto.find()
@@ -24,9 +24,9 @@ ruteador.get("/:id", (req, res) => {
 
 ruteador.post("/", (req, res) => {
   const producto = new Producto({
-    codigo: req.body.codigo,
     descripcion: req.body.descripcion,
     precio: req.body.precio,
+    tipo: req.body.tipo,
   });
 
   producto
